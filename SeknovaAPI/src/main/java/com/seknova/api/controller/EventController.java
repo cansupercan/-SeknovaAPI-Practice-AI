@@ -2,7 +2,7 @@ package com.seknova.api.controller;
 
 import com.seknova.api.dto.ApiResponse;
 import com.seknova.api.dto.EventRequest;
-import com.seknova.api.service.AuthService;
+import com.seknova.api.service.TokenProvider;
 import com.seknova.api.service.EventService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.*;
 public class EventController {
     
     private final EventService eventService;
-    private final AuthService authService;
+    private final TokenProvider tokenProvider;
     
     private Long getUserIdFromToken(String token) {
         if (token != null && token.startsWith("Bearer ")) {
             token = token.substring(7);
         }
-        return authService.getUserIdFromToken(token);
+        return tokenProvider.getUserIdFromToken(token);
     }
     
     @GetMapping("/Eventall")

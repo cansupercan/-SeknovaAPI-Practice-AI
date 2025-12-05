@@ -44,6 +44,7 @@ public class UserAuth {
         // 初始化集合以避免 null
         if (this.userInformation == null) {
             this.userInformation = new UserInformation();
+            this.userInformation.setUserId(userId);
         }
         if (this.events == null) {
             this.events = new ArrayList<>();

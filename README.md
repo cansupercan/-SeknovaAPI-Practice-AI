@@ -134,6 +134,11 @@ jwt.expiration=86400000
 - ✅ JWT 認證實現
 - ✅ PostgreSQL 數據庫配置
 
+## 相關文檔
+
+- [API 規範](../setting.md) - 項目的 API 規範定義
+- [API 測試範例](./SeknovaAPI/API_TESTING_EXAMPLES.md) - 完整的 API 測試範例和 cURL 命令
+
 ## 許可證
 
 MIT License

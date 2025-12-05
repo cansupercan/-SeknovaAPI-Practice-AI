@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -33,8 +34,22 @@ public class UserAuth {
     private UserInformation userInformation;
     
     @OneToMany(mappedBy = "userAuth", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Event> events;
+    private List<Event> events ;
     
     @OneToMany(mappedBy = "userAuth", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Record> records;
+
+    @PrePersist
+    public void prePersist() {
+        // 初始化集合以避免 null
+        if (this.userInformation == null) {
+            this.userInformation = new UserInformation();
+        }
+        if (this.events == null) {
+            this.events = new ArrayList<>();
+        }
+        if (this.records == null) {
+            this.records = new ArrayList<>();
+        }
+    }
 }

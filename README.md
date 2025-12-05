@@ -136,8 +136,8 @@ jwt.expiration=86400000
 
 ## 相關文檔
 
-- [API 規範](../setting.md) - 項目的 API 規範定義
-- [API 測試範例](./SeknovaAPI/API_TESTING_EXAMPLES.md) - 完整的 API 測試範例和 cURL 命令
+- [API 規範](https://github.com/cansupercan/-SeknovaAPI-Practice-AI/blob/main/README.md) - 項目的 API 規範定義
+- [API 測試範例](https://github.com/cansupercan/-SeknovaAPI-Practice-AI/blob/main/API_TESTING_EXAMPLES.md) - 完整的 API 測試範例和 cURL 命令
 
 ## 許可證
 
